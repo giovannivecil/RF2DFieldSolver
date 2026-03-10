@@ -50,7 +50,7 @@ jobs:
           path: Software/RF2DFieldSolver/RF2DFieldSolver
           
   Windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: msys2/setup-msys2@v2
