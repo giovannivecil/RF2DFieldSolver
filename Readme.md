@@ -17,6 +17,23 @@ Well yes, but actually no:
 
 Ideally yes, but it is not that straightforward. In theory, a field solver should give you a perfect result. In practice, the accuracy will depend on the grid size and tolerance for the simulation. Getting these values right for an acceptable simulation time while still getting good results can be tricky.
 
+## Install dependencies - Ubuntu
+
+'''bash
+sudo apt-get update
+sudo apt-get install -y qt6-tools-dev qt6-base-dev
+qtchooser -install qt6 $(which qmake6)
+'''
+
+## How to build the software - Ubuntu
+
+'''bash
+cd Software/RF2DFieldSolver
+export QT_SELECT=qt6
+qmake RF2DFieldSolver.pro
+make -j9
+'''
+
 ## How to use the field solver
 
 1. Configure the area size
