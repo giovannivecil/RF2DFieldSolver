@@ -19,20 +19,20 @@ Ideally yes, but it is not that straightforward. In theory, a field solver shoul
 
 ## Install dependencies - Ubuntu
 
-'''bash
+```bash
 sudo apt-get update
 sudo apt-get install -y qt6-tools-dev qt6-base-dev
 qtchooser -install qt6 $(which qmake6)
-'''
+```
 
 ## How to build the software - Ubuntu
 
-'''bash
+```bash
 cd Software/RF2DFieldSolver
 export QT_SELECT=qt6
 qmake RF2DFieldSolver.pro
 make -j9
-'''
+```
 
 ## How to use the field solver
 
