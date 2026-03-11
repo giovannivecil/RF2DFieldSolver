@@ -6,6 +6,7 @@ CustomDifferentialMicrostrip::CustomDifferentialMicrostrip()
 {
     name = "Custom Differential Microstrip";
     width = 0.3e-3;
+    deltaW = 0.04e-3;
     height = 35e-6;
     gap = 0.2e-3;
     substrate_height = 0.2e-3;
