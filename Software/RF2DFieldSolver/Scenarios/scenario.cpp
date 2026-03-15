@@ -12,6 +12,7 @@
 #include "differentialstripline.h"
 #include "coplanardifferentialstripline.h"
 #include "customdifferentialmicrostrip.h"
+#include "customcoplanardifferentialmicrostrip.h"
 
 Scenario::Scenario(QWidget *parent) :
     QDialog(parent),
@@ -68,6 +69,7 @@ QList<Scenario *> Scenario::createAll()
     ret.push_back(new DifferentialMicrostrip());
     ret.push_back(new CustomDifferentialMicrostrip());
     ret.push_back(new CoplanarDifferentialMicrostrip());
+    ret.push_back(new CustomCoplanarDifferentialMicrostrip());
     ret.push_back(new Stripline());
     ret.push_back(new CoplanarStripline());
     ret.push_back(new DifferentialStripline());

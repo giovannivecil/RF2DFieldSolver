@@ -13,6 +13,7 @@ SOURCES += \
     CustomWidgets/pcbview.cpp \
     CustomWidgets/siunitedit.cpp \
     Scenarios/coplanardifferentialmicrostrip.cpp \
+    Scenarios/customcoplanardifferentialmicrostrip.cpp \
     Scenarios/coplanardifferentialstripline.cpp \
     Scenarios/coplanarmicrostrip.cpp \
     Scenarios/coplanarstripline.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     CustomWidgets/pcbview.h \
     CustomWidgets/siunitedit.h \
     Scenarios/coplanardifferentialmicrostrip.h \
+    Scenarios/customcoplanardifferentialmicrostrip.h \
     Scenarios/coplanardifferentialstripline.h \
     Scenarios/coplanarmicrostrip.h \
     Scenarios/coplanarstripline.h \

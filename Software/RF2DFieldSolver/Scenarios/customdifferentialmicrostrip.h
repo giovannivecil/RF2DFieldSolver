@@ -15,8 +15,10 @@ private:
     double deltaW;
     double height;
     double gap;
-    double substrate_height;
-    double e_r;
+    double substrate_heightA;
+    double e_rA;
+    double substrate_heightB;
+    double e_rB;
 };
 
 #endif // CUSTOMDIFFERENTIALMICROSTRIP_H
