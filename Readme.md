@@ -48,10 +48,13 @@ The real use case is the simulation of non-standard elements. But creating the s
 
 |     References      |                         Single Ended                         |                         Differential                         |
 | :-----------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|     Microstrip      |     ![](Software/RF2DFieldSolver/images/microstrip.png)      | ![](Software/RF2DFieldSolver/images/microstrip_differential.png) |
-| Coplanar Microstrip | ![](Software/RF2DFieldSolver/images/coplanar_microstrip.png) | ![](Software/RF2DFieldSolver/images/coplanar_microstrip_differential.png) |
+|     Microstrip      |     ![](Software/RF2DFieldSolver/images/custom_microstrip.png)      | ![](Software/RF2DFieldSolver/images/custom_microstrip_differential.png) |
+| Coplanar Microstrip | ![](Software/RF2DFieldSolver/images/custom_coplanar_microstrip.png) | ![](Software/RF2DFieldSolver/images/custom_coplanar_microstrip_differential.png) |
 |      Stripline      |      ![](Software/RF2DFieldSolver/images/stripline.png)      | ![](Software/RF2DFieldSolver/images/stripline_differential.png) |
 | Coplanar Stripline  | ![](Software/RF2DFieldSolver/images/coplanar_stripline.png)  | ![](Software/RF2DFieldSolver/images/coplanar_stripline_differential.png) |
+
+> [!NOTE]
+> Microstrip-base predefined scenarios have been updated to make them more customizable from the GUI. The update, however, still doesn't affect the stripline-based models.
 
 ## How does the calculation work?
 
