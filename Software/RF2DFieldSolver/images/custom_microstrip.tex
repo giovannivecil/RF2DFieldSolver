@@ -28,27 +28,31 @@
           \pgfsetdash{}{0pt}
           \pgfpathmoveto{\pgfpoint{0pt}{0pt}}
           \pgfpathlineto{\pgfpoint{\pgfdecoratedpathlength}{0pt}}
-          \pgfusepath{stroke}
 }}
 
+\tikzset{dim/.style args={#1,#2}{decoration={add dim,distance=#2},
+                decorate,
+                postaction={decorate,decoration={text along path,
+                                                 raise=#2,
+                                                 text align={align=center},
+                                                 text={#1}}}}}
+                                      
+\tikzset{fontscale/.style = {font=\relsize{#1}}
+    }                                      
+                                                 
 \begin{tikzpicture}[>=stealth]
-\fill[PCB1] (-4,-1) rectangle (4,0);
-\fill[PCB2] (-4,-2) rectangle (4,-1);
-\fill[Trace] (-1.5,0) -- (-0.5,0) -- (-0.7,0.5) -- (-1.3,0.5) -- cycle;
-\fill[Trace] (0.5,0) -- (1.5,0) -- (1.3,0.5) -- (0.7,0.5) -- cycle;
-\fill[Trace] (-4,-2.5) rectangle (4,-2);
+\fill[PCB1] (-3,-1) rectangle (3,0);
+\fill[PCB2] (-3,-2) rectangle (3,-1);
+\fill[Trace] (-0.5,0) -- (0.5,0) -- (0.3,0.5) -- (-0.3,0.5) -- cycle;
+\fill[Trace] (-3,-2.5) rectangle (3,-2);
 
-\draw[<->] (-1.3,0.55) -- (-0.7,0.55) node[midway, above] {$w - \Delta w$};
-\draw[<->] (0.7,0.55) -- (1.3,0.55) node[midway, above] {$w - \Delta w$};
-\draw[<->] (0.5,0.05) -- (1.5,0.05) node[midway, below] {$w$};
-\draw[<->] (-1.5,0.05) -- (-0.5,0.05) node[midway, below] {$w$};
-\draw[<->] (-0.5,0.05) -- (0.5,0.05) node[midway, above] {$s$};
-\draw[<->] (-1.55,0) -- (-1.55,0.5) node[midway, left] {$t$};
-\draw[<->] (-3,-1.0) -- (-3,0) node[midway, left] {$h_1$};
-\draw[<->] (-3,-2.0) -- (-3,-1.0) node[midway, left] {$h_2$};
+\draw[<->] (-0.3,0.55) -- (0.3,0.55) node[midway, above] {$w - \Delta w$};
+\draw[<->] (-0.5,0.05) -- (0.5,0.05) node[midway, below] {$w$};
+\draw[<->] (-0.55,0) -- (-0.55,0.5) node[midway, left] {$t$};
+\draw[<->] (-2.,-1.0) -- (-2.,0) node[midway, left] {$h_1$};
+\draw[<->] (-2.,-2.0) -- (-2.,-1.0) node[midway, left] {$h_2$};
 
 \node at (0,-0.5) {$\epsilon_{r,A}$};
 \node at (0,-1.5) {$\epsilon_{r,B}$};
 \end{tikzpicture}
-
 \end{document}

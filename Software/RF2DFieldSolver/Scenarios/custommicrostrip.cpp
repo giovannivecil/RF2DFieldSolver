@@ -1,14 +1,13 @@
-#include "customdifferentialmicrostrip.h"
+#include "custommicrostrip.h"
 
 #include "ui_scenario.h"
 
-CustomDifferentialMicrostrip::CustomDifferentialMicrostrip()
+CustomMicrostrip::CustomMicrostrip()
 {
-    name = "Differential Microstrip";
+    name = "Microstrip";
     width = 0.3e-3;
     deltaW = 0.04e-3;
     height = 35e-6;
-    gap = 0.2e-3;
     substrate_heightA = 0.2e-3;
     substrate_heightB = 0.2e-3;
     e_rA = 4.1;
@@ -17,37 +16,29 @@ CustomDifferentialMicrostrip::CustomDifferentialMicrostrip()
     parameters.push_back({.name = "Trace Width (w)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &width});
     parameters.push_back({.name = "Trace w - w_top (DeltaW)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &deltaW});
     parameters.push_back({.name = "Trace Height (t)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &height});
-    parameters.push_back({.name = "Gap Width (s)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &gap});
     parameters.push_back({.name = "Substrate A Height (h1)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &substrate_heightA});
     parameters.push_back({.name = "Substrate A dielectric constant", .unit = "", .prefixes = " ", .precision = 3, .value = &e_rA});
     parameters.push_back({.name = "Substrate B Height (h2)", .unit = "m", .prefixes = "um ", .precision = 4, .value = &substrate_heightB});
     parameters.push_back({.name = "Substrate B dielectric constant", .unit = "", .prefixes = " ", .precision = 3, .value = &e_rB});
 }
 
-ElementList *CustomDifferentialMicrostrip::createScenario()
+ElementList *CustomMicrostrip::createScenario()
 {
     auto list = new ElementList();
 
     if(ui->autoArea->isChecked()) {
-        ui->xleft->setValue(-std::max((substrate_heightA + substrate_heightB) * 5, width+gap/2));
-        ui->xright->setValue(std::max((substrate_heightA + substrate_heightB) * 5, width+gap/2));
+        ui->xleft->setValue(-std::max((substrate_heightA + substrate_heightB) * 5, width/2));
+        ui->xright->setValue(std::max((substrate_heightA + substrate_heightB) * 5, width/2));
         ui->ytop->setValue((substrate_heightA + substrate_heightB) * 5);
         ui->ybottom->setValue(-(substrate_heightA + substrate_heightB)-0.1e-3);
     }
 
     auto trace = new Element(Element::Type::TracePos);
-    trace->appendVertex(QPointF(-width - gap/2, 0));
-    trace->appendVertex(QPointF(-gap/2, 0));
-    trace->appendVertex(QPointF(-gap/2 - deltaW/2, height));
-    trace->appendVertex(QPointF(-(width - deltaW/2) - gap/2, height));
+    trace->appendVertex(QPointF(-width/2, 0));
+    trace->appendVertex(QPointF(width/2, 0));
+    trace->appendVertex(QPointF(width/2 - deltaW/2, height));
+    trace->appendVertex(QPointF(-width/2 + deltaW/2, height));
     list->addElement(trace);
-
-    auto trace2 = new Element(Element::Type::TraceNeg);
-    trace2->appendVertex(QPointF(gap/2, 0));
-    trace2->appendVertex(QPointF(gap/2 + width, 0));
-    trace2->appendVertex(QPointF(gap/2 + (width - deltaW/2), height));
-    trace2->appendVertex(QPointF(gap/2 + deltaW/2, height));
-    list->addElement(trace2);
 
     auto substrateA = new Element(Element::Type::Dielectric);
     substrateA->setName("Substrate A");
@@ -79,8 +70,8 @@ ElementList *CustomDifferentialMicrostrip::createScenario()
     return list;
 }
 
-QPixmap CustomDifferentialMicrostrip::getImage()
+QPixmap CustomMicrostrip::getImage()
 {
-    return QPixmap(":/images/custom_microstrip_differential.png");
+    return QPixmap(":/images/custom_microstrip.png");
 }
 

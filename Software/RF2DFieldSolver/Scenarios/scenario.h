@@ -21,7 +21,7 @@ public:
 
     static QList<Scenario*> createAll();
 
-    void setupParameters();
+    virtual void setupParameters();
     const QString &getName() const { return name; }
 
 signals:

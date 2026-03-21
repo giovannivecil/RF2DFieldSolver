@@ -16,10 +16,12 @@ SOURCES += \
     Scenarios/customcoplanardifferentialmicrostrip.cpp \
     Scenarios/coplanardifferentialstripline.cpp \
     Scenarios/coplanarmicrostrip.cpp \
+    Scenarios/customcoplanarmicrostrip.cpp \
     Scenarios/coplanarstripline.cpp \
     Scenarios/differentialmicrostrip.cpp \
     Scenarios/customdifferentialmicrostrip.cpp \
     Scenarios/differentialstripline.cpp \
+    Scenarios/custommicrostrip.cpp \
     Scenarios/microstrip.cpp \
     Scenarios/scenario.cpp \
     Scenarios/stripline.cpp \
@@ -44,10 +46,12 @@ HEADERS += \
     Scenarios/customcoplanardifferentialmicrostrip.h \
     Scenarios/coplanardifferentialstripline.h \
     Scenarios/coplanarmicrostrip.h \
+    Scenarios/customcoplanarmicrostrip.h \
     Scenarios/coplanarstripline.h \
     Scenarios/differentialmicrostrip.h \
     Scenarios/customdifferentialmicrostrip.h \
     Scenarios/differentialstripline.h \
+    Scenarios/custommicrostrip.h \
     Scenarios/microstrip.h \
     Scenarios/scenario.h \
     Scenarios/stripline.h \

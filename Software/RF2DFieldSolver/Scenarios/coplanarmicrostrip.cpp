@@ -1,4 +1,4 @@
-#include "coplanarmicrostrip.h".h"
+#include "coplanarmicrostrip.h"
 
 #include "ui_scenario.h"
 

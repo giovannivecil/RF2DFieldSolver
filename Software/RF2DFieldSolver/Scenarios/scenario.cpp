@@ -11,6 +11,8 @@
 #include "coplanardifferentialmicrostrip.h"
 #include "differentialstripline.h"
 #include "coplanardifferentialstripline.h"
+#include "custommicrostrip.h"
+#include "customcoplanarmicrostrip.h"
 #include "customdifferentialmicrostrip.h"
 #include "customcoplanardifferentialmicrostrip.h"
 
@@ -64,16 +66,18 @@ Scenario::~Scenario()
 QList<Scenario *> Scenario::createAll()
 {
     QList<Scenario*> ret;
-    ret.push_back(new Microstrip());
-    ret.push_back(new CoplanarMicrostrip());
-    ret.push_back(new DifferentialMicrostrip());
-    ret.push_back(new CustomDifferentialMicrostrip());
-    ret.push_back(new CoplanarDifferentialMicrostrip());
-    ret.push_back(new CustomCoplanarDifferentialMicrostrip());
+    //ret.push_back(new Microstrip());
+    //ret.push_back(new CoplanarMicrostrip());
+    //ret.push_back(new DifferentialMicrostrip());
+    //ret.push_back(new CoplanarDifferentialMicrostrip());
     ret.push_back(new Stripline());
     ret.push_back(new CoplanarStripline());
     ret.push_back(new DifferentialStripline());
     ret.push_back(new CoplanarDifferentialStripline());
+    ret.push_back(new CustomMicrostrip());
+    ret.push_back(new CustomCoplanarMicrostrip());
+    ret.push_back(new CustomDifferentialMicrostrip());
+    ret.push_back(new CustomCoplanarDifferentialMicrostrip());
 
     for(auto s : ret) {
         s->setupParameters();

@@ -1,12 +1,12 @@
-#ifndef CUSTOMCOPLANARDIFFERENTIALMICROSTRIP_H
-#define CUSTOMCOPLANARDIFFERENTIALMICROSTRIP_H
+#ifndef CUSTOMCOPLANARMICROSTRIP_H
+#define CUSTOMCOPLANARMICROSTRIP_H
 
 #include "scenario.h"
 
-class CustomCoplanarDifferentialMicrostrip : public Scenario
+class CustomCoplanarMicrostrip : public Scenario
 {
 public:
-    CustomCoplanarDifferentialMicrostrip();
+    CustomCoplanarMicrostrip();
 protected:
     virtual ElementList *createScenario() override;
     virtual QPixmap getImage() override;
@@ -15,8 +15,7 @@ private:
     double width;
     double height;
     double deltaW;
-    double gapTrace;
-    double gapCoplanar;
+    double gap;
     double substrate_heightA;
     double e_rA;
     double substrate_heightB;
@@ -24,4 +23,4 @@ private:
     bool bottomGnd;
 };
 
-#endif // CUSTOMCOPLANARDIFFERENTIALMICROSTRIP_H
+#endif // CUSTOMCOPLANARMICROSTRIP_H
